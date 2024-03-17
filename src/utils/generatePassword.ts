@@ -1,9 +1,11 @@
+import { PasswordGeneratorSettings } from './interfaces'
+
 const letters: string[] = 'abcdefghijklmnopqrstuvwxyz'.split('')
 const capitalLetters: string[] = letters.map(letter => letter.toUpperCase())
 const numbers: string[] = '0123456789'.split('')
 const specialChars: string[] = '!@#$%^&*()_+-={}[]|;:<>?/'.split('')
 
-export const generatePassword = passedSettings => {
+export const generatePassword = (passedSettings: PasswordGeneratorSettings) => {
 	const { passwordLength } = passedSettings
 	const mergedArray = handleSettings(passedSettings)
 
@@ -22,7 +24,7 @@ const handleSettings = ({
 	includeCapitalLetters,
 	includeNumbers,
 	includeSpecialChars,
-}) => {
+}: PasswordGeneratorSettings) => {
 	const mergedArray = []
 
 	includeCapitalLetters && mergedArray.push(capitalLetters)
