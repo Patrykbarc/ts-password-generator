@@ -39,17 +39,17 @@ export function GeneratorFooter({
 
   return (
     <div className="footer">
-      <Button className="w-full" callback={handleGeneratePassword}>
+      <Button className="w-full mb-8" callback={handleGeneratePassword}>
         Generate password
       </Button>
       {generatedPassword && (
-        <p className="mt-3 m-0 text-break">
+        <p className="mt-3 m-0 text-break text-center">
           {isCopied ? (
             <span className="generated-password-feedback">
               Copied to clipboard
             </span>
           ) : (
-            <span className="generated-password" onClick={copyToClipboard}>
+            <span className="generated-password text-h4 font-semibold" onClick={copyToClipboard}>
               {generatedPassword}
             </span>
           )}

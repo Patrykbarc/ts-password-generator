@@ -13,7 +13,7 @@ export function Generator() {
 	})
 
 	return (
-		<div className='bg-indigo-50 border-2 border-indigo-500 rounded-xl p-12'>
+		<div className='flex flex-col bg-indigo-50 border-2 border-indigo-500 rounded-xl p-12 gap-11'>
 			<GeneratorBody settings={settings} setSettings={setSettings} />
 			<GeneratorFooter settings={settings} />
 		</div>
