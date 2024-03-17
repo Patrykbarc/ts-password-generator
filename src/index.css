@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+	font-family: poppins, Arial, sans-serif;
+}
+
+.noise {
+	background: linear-gradient(to right, rgb(255, 242, 248), transparent),
+		url(https://grainy-gradients.vercel.app/noise.svg);
+}

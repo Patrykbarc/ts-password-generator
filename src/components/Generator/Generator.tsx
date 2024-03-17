@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { GeneratorBody } from '../../components/GeneratorBody/GeneratorBody'
-import { GeneratorFooter } from '../../components/GeneratorFooter/GeneratorFooter'
+import { GeneratorBody } from '../GeneratorBody/GeneratorBody'
+import { GeneratorFooter } from '../GeneratorFooter/GeneratorFooter'
 import { PasswordGeneratorSettings } from '../../utils/interfaces'
 
 export function Generator() {
@@ -13,7 +13,7 @@ export function Generator() {
 	})
 
 	return (
-		<div className='bg-indigo-50 border-2 border-indigo-500 w-1/2 rounded-xl p-12'>
+		<div className='bg-indigo-50 border-2 border-indigo-500 rounded-xl p-12'>
 			<GeneratorBody settings={settings} setSettings={setSettings} />
 			<GeneratorFooter settings={settings} />
 		</div>

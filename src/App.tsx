@@ -1,4 +1,4 @@
-import { Generator } from './views/Generator/Generator'
+import { Generator } from './components/Generator/Generator'
 
 function App() {
 	return <Generator />

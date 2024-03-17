@@ -43,27 +43,32 @@ export function GeneratorBody({ settings, setSettings }: GeneratorBodyProps) {
 	}
 
 	return (
-		<div className='body'>
-			<div>
-				<div className='mb-3 flex gap-4'>
-					<div>
-						Password Length: <b>{passwordLength}</b>
-					</div>
-					<input
-						className='grow'
-						type='range'
-						min={6}
-						max={50}
-						value={passwordLength}
-						onChange={handleSetPasswordLength}
-					/>
+		<div>
+			<h4 className='text-h4 font-semibold mb-6'>
+				Password strength:{' '}
+				<label className='bg-red-500 text-indigo-50 px-2 rounded-lg'>Weak</label>
+			</h4>
+			<div className='mb-3 flex gap-4'>
+				<div>
+					Password Length: <b>{passwordLength}</b>
 				</div>
+				<input
+					className='grow'
+					type='range'
+					min={6}
+					max={50}
+					value={passwordLength}
+					onChange={handleSetPasswordLength}
+				/>
+			</div>
+			<div className='flex gap-4'>
 				{options.map(option => {
 					return (
 						<label key={option.value}>
 							<input
 								type='checkbox'
 								value={option.value}
+								className='mr-2'
 								checked={
 									!!settings[option.value as keyof PasswordGeneratorSettings]
 								}
