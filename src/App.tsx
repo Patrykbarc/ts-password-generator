@@ -1,5 +1,7 @@
+import { Generator } from './views/Generator/Generator'
+
 function App() {
-	return <h1 className='text-9xl text-red-600'>hello world!</h1>
+	return <Generator />
 }
 
 export default App
