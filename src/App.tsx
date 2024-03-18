@@ -1,7 +1,7 @@
-import { Generator } from './components/Generator/Generator'
+import { Layout } from "./components/Layout/Layout";
 
 function App() {
-	return <Generator />
+  return <Layout />;
 }
 
-export default App
+export default App;

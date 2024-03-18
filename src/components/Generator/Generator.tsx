@@ -1,21 +1,22 @@
-import { useState } from 'react'
-import { GeneratorBody } from '../GeneratorBody/GeneratorBody'
-import { GeneratorFooter } from '../GeneratorFooter/GeneratorFooter'
-import { PasswordGeneratorSettings } from '../../utils/interfaces'
+import { useState } from "react";
+import { GeneratorBody } from "../GeneratorBody/GeneratorBody";
+import { GeneratorFooter } from "../GeneratorFooter/GeneratorFooter";
+import { PasswordGeneratorSettings } from "../../utils/interfaces";
+import { HeroCard } from "../HeroCard/HeroCard";
 
 export function Generator() {
-	const [settings, setSettings] = useState<PasswordGeneratorSettings>({
-		passwordLength: 10,
-		includeLetters: true,
-		includeCapitalLetters: true,
-		includeNumbers: false,
-		includeSpecialChars: false,
-	})
+  const [settings, setSettings] = useState<PasswordGeneratorSettings>({
+    passwordLength: 10,
+    includeLetters: true,
+    includeCapitalLetters: true,
+    includeNumbers: false,
+    includeSpecialChars: false,
+  });
 
-	return (
-		<div className='flex flex-col bg-indigo-50 border-2 border-indigo-500 rounded-xl p-12 gap-11'>
-			<GeneratorBody settings={settings} setSettings={setSettings} />
-			<GeneratorFooter settings={settings} />
-		</div>
-	)
+  return (
+    <HeroCard>
+      <GeneratorBody settings={settings} setSettings={setSettings} />
+      <GeneratorFooter settings={settings} />
+    </HeroCard>
+  );
 }
