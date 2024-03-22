@@ -2,11 +2,12 @@ import { Accordion } from "../../components/Accordion/Accordion";
 import { Card } from "../../components/Card/Card";
 import { Wrapper } from "../../components/Wrapper/Wrapper";
 import { cardsData } from "../../constants/cardsData";
+import { DefaultProps } from "../../utils/interfaces";
 
-export function Faq() {
+export function Faq({ className }: DefaultProps) {
   return (
-    <Wrapper>
-      <section className="mt-24">
+    <Wrapper className={className}>
+      <section>
         <div className="mb-12">
           <h2 className="text-h2 font-bold">What makes a password strong?</h2>
           <h5 className="text-h5 font-semibold">
