@@ -4,8 +4,8 @@ import { Wrapper } from "../../components/Wrapper/Wrapper";
 
 export function Hero() {
   return (
-    <div className="flex min-h-dvh bg-[url('./assets/HeroSection.jpg')] bg-cover">
-      <Wrapper className="flex-col gap-24">
+    <div className="flex h-fit bg-[url('./assets/HeroSection.jpg')] bg-cover py-24 lg:h-[950px]">
+      <Wrapper className="flex-col gap-20">
         <div className="font-bold text-neutral-100">
           <h1 className="text-h1">Free Password Generator</h1>
           <h4 className="text-h3">Create safe and unique passwords</h4>

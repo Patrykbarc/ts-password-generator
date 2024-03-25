@@ -20,7 +20,7 @@ export function Faq({ className }: DefaultProps) {
           {cardsData.map((card) => {
             return (
               <Card
-                key={card.title}
+                key={card.title + card.description}
                 title={card.title}
                 description={card.description}
               />
