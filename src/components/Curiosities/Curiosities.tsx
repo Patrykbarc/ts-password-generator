@@ -1,7 +1,7 @@
 export function Curiosities() {
 	return (
 		<div>
-			<h2 className='text-h2 font-bold text-indigo-500'>Did you know that?</h2>
+			<h2 className='text-h2 font-bold text-indigo-500 mb-8'>Did you know that?</h2>
 			<div className='flex flex-col gap-5'>
 				<p className='text-h5 font-semibold'>
 					Using long and complex passwords, makes them much harder to crack?

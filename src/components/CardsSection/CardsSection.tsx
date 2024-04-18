@@ -5,7 +5,9 @@ export function CardsSection() {
 	return (
 		<div>
 			<div className='mb-10'>
-				<h2 className='text-h2 font-bold text-indigo-500'>What makes a password strong?</h2>
+				<h2 className='text-h2 font-bold text-indigo-500 mb-8'>
+					What makes a password strong?
+				</h2>
 				<h5 className='text-h5 font-semibold'>
 					A strong password typically includes a combination of uppercase and lowercase
 					letters, numbers, and special characters, which increase its complexity and make

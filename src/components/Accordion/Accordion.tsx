@@ -10,7 +10,7 @@ export function Accordion() {
 
 	return (
 		<div>
-			<h2 className='text-h2 font-bold text-indigo-500'>Frequently asked questions</h2>
+			<h2 className='text-h2 font-bold text-indigo-500 mb-8'>Frequently asked questions</h2>
 
 			{accordionData.map((data, index) => {
 				const isOpen = openIndex === index
@@ -23,7 +23,7 @@ export function Accordion() {
 								onClick={() => handleSectionFold(index)}>
 								<h4 className='text-h4 font-semibold '>{data.title}</h4>
 								<PlusCircleIcon
-									className={`h-12 text-neutral-700 transition-transform duration-500 ${isOpen ? 'rotate-45 fill-indigo-400' : ''} group-hover:fill-indigo-500`}
+									className={`h-12 hidden lg:block text-neutral-700 transition-transform duration-500 ${isOpen ? 'rotate-45 fill-indigo-400' : ''} group-hover:fill-indigo-500`}
 								/>
 							</div>
 
@@ -31,12 +31,12 @@ export function Accordion() {
 								style={
 									isOpen
 										? {
-												maxHeight: '10rem',
-												transition: 'max-height 300ms 300ms ease-out',
+												maxHeight: '20rem',
+												transition: 'max-height 500ms 500ms ease-out',
 											}
 										: {
 												maxHeight: '0rem',
-												transition: 'max-height 300ms ease-out',
+												transition: 'max-height 500ms ease-out',
 											}
 								}>
 								<p className='pb-5 pt-3 text-regular'>{data.description}</p>

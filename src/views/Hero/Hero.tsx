@@ -4,7 +4,7 @@ import { Wrapper } from '../../components/Wrapper/Wrapper'
 
 export function Hero() {
 	return (
-		<div className='relative flex h-screen bg-center py-24'>
+		<div className='relative flex h-fit lg:h-screen bg-center py-24'>
 			<BackgroundImage className='bg-fixed' backgroundFixed={true} />
 			<Wrapper className='relative z-50 flex-col gap-10 sm:gap-20'>
 				<div>
