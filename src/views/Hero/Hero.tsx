@@ -1,14 +1,20 @@
+import { BackgroundImage } from "../../components/BackgroundImage/BackgroundImage";
 import { Generator } from "../../components/Generator/Generator";
 import { HeroCard } from "../../components/HeroCard/HeroCard";
 import { Wrapper } from "../../components/Wrapper/Wrapper";
 
 export function Hero() {
   return (
-    <div className="flex h-fit bg-[url('./assets/HeroSection.jpg')] bg-cover py-24 lg:h-[950px]">
-      <Wrapper className="flex-col gap-20">
-        <div className="font-bold text-neutral-100">
-          <h1 className="text-h1">Free Password Generator</h1>
-          <h4 className="text-h3">Create safe and unique passwords</h4>
+    <div className="relative flex h-fit bg-center py-24 lg:h-[950px]">
+      <BackgroundImage className="bg-fixed" backgroundFixed={true} />
+      <Wrapper className="relative z-50 flex-col gap-20">
+        <div>
+          <h1 className="mb-3 text-8xl font-black text-neutral-100">
+            Free Password Generator
+          </h1>
+          <h4 className="text-5xl font-light text-neutral-300">
+            Create safe and unique passwords
+          </h4>
         </div>
 
         <div className="flex flex-wrap gap-8 lg:flex-nowrap">

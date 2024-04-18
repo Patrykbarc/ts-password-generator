@@ -3,10 +3,10 @@ import { Footer } from "../../views/Footer/Footer";
 import { Hero } from "../../views/Hero/Hero";
 export function Layout() {
   return (
-    <>
+    <div className="text-pretty">
       <Hero />
       <Faq className="py-24" />
       <Footer />
-    </>
+    </div>
   );
 }
