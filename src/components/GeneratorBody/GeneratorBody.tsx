@@ -1,29 +1,10 @@
 import React from "react";
-import { PasswordGeneratorSettings } from "../../utils/interfaces";
-
-interface GeneratorBodyProps {
-  settings: PasswordGeneratorSettings;
-  setSettings: React.Dispatch<React.SetStateAction<PasswordGeneratorSettings>>;
-}
-
-const options = [
-  {
-    name: "Letters",
-    value: "includeLetters",
-  },
-  {
-    name: "Capital letters",
-    value: "includeCapitalLetters",
-  },
-  {
-    name: "Numbers",
-    value: "includeNumbers",
-  },
-  {
-    name: "Special chars",
-    value: "includeSpecialChars",
-  },
-];
+import {
+  GeneratorBodyProps,
+  PasswordGeneratorSettings,
+} from "../../utils/interfaces";
+import { PasswordStrengthBadge } from "../PasswordStrengthBadge/PasswordStrengthBadge";
+import { options } from "../../constants/options";
 
 export function GeneratorBody({ settings, setSettings }: GeneratorBodyProps) {
   const { passwordLength } = settings;
@@ -44,11 +25,8 @@ export function GeneratorBody({ settings, setSettings }: GeneratorBodyProps) {
 
   return (
     <div>
-      <h4 className="mb-6 text-h4 font-semibold">
-        Password strength:{" "}
-        <label className="bg-red-500 px-2 text-indigo-50">Weak</label>
-      </h4>
-      <div className="mb-10 flex gap-4">
+      <PasswordStrengthBadge {...settings} />
+      <div className="mb-6 flex flex-col gap-4 sm:mb-10 sm:flex-row">
         <div>
           Password Length: <b>{passwordLength}</b>
         </div>
@@ -61,7 +39,7 @@ export function GeneratorBody({ settings, setSettings }: GeneratorBodyProps) {
           onChange={handleSetPasswordLength}
         />
       </div>
-      <div className="flex gap-4">
+      <div className="flex flex-col gap-4 sm:flex-row">
         {options.map((option) => {
           return (
             <label key={option.value}>

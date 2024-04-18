@@ -16,7 +16,7 @@ export function Faq({ className }: DefaultProps) {
             them.
           </h5>
         </div>
-        <div className="flex gap-4">
+        <div className="flex flex-col gap-4 md:flex-row">
           {cardsData.map((card) => {
             return (
               <Card

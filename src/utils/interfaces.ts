@@ -13,3 +13,8 @@ export interface PasswordGeneratorSettings {
   includeNumbers: boolean;
   includeSpecialChars: boolean;
 }
+
+export interface GeneratorBodyProps {
+  settings: PasswordGeneratorSettings;
+  setSettings: React.Dispatch<React.SetStateAction<PasswordGeneratorSettings>>;
+}
