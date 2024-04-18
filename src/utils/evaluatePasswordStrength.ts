@@ -1,54 +1,54 @@
-import { PasswordGeneratorSettings } from "./interfaces";
+import { PasswordGeneratorSettings } from './interfaces'
 
-export function evaluatePasswordStrength(
-  passwordConfig: PasswordGeneratorSettings,
-) {
-  const {
-    includeCapitalLetters,
-    includeLetters,
-    includeNumbers,
-    includeSpecialChars,
-    passwordLength,
-  } = passwordConfig;
+export function evaluatePasswordStrength(passwordConfig: PasswordGeneratorSettings) {
+	const {
+		includeCapitalLetters,
+		includeLetters,
+		includeNumbers,
+		includeSpecialChars,
+		passwordLength,
+	} = passwordConfig
 
-  let strengthScore = 0;
+	let strengthScore = 0
 
-  // Obecność zarówno małych, jak i dużych liter jest bardziej pożądana
-  if (includeLetters && includeCapitalLetters) {
-    strengthScore += 3; // Trzy punkty za obecność obu rodzajów liter
-  } else if (includeLetters) {
-    strengthScore += 1; // Jeden punkt za obecność tylko małych liter
-  }
+	if (includeLetters && includeCapitalLetters) {
+		strengthScore += 3 // Punkty za obecność zarówno małych, jak i dużych liter
+	} else if (includeLetters) {
+		strengthScore += 1 // Punkty tylko za małe litery
+	}
 
-  // Liczby zwiększają złożoność hasła
-  if (includeNumbers) {
-    strengthScore += 2; // Dwa punkty za obecność liczb
-  }
+	if (includeNumbers) {
+		strengthScore += 2 // Punkty za liczby
+	}
 
-  // Znaki specjalne znacząco zwiększają bezpieczeństwo hasła
-  if (includeSpecialChars) {
-    strengthScore += 4; // Cztery punkty za obecność znaków specjalnych
-  }
+	if (includeSpecialChars) {
+		strengthScore += 4 // Punkty za znaki specjalne
+	}
 
-  // Długość hasła jest krytycznym czynnikiem bezpieczeństwa
-  if (passwordLength >= 12) {
-    strengthScore += 3; // Trzy punkty za długość hasła 12 znaków lub więcej
-  } else if (passwordLength >= 10) {
-    strengthScore += 2; // Dwa punkty za długość hasła od 10 do 11 znaków
-  } else if (passwordLength >= 8) {
-    strengthScore += 1; // Jeden punkt za długość hasła od 8 do 9 znaków
-  }
+	// Punkty za długość hasła
+	if (passwordLength >= 12) {
+		strengthScore += 3
+	} else if (passwordLength >= 10) {
+		strengthScore += 2
+	} else if (passwordLength >= 8) {
+		strengthScore += 1
+	}
 
-  // Ocenianie siły hasła na podstawie zgromadzonych punktów
-  if (strengthScore >= 10) {
-    return "Very strong"; // Bardzo mocne
-  } else if (strengthScore >= 7) {
-    return "Strong"; // Mocne
-  } else if (strengthScore >= 4) {
-    return "Medium"; // Średnie
-  } else if (strengthScore >= 2) {
-    return "Weak"; // Słabe
-  } else {
-    return "Very weak"; // Bardzo słabe
-  }
+	// Brak punktów
+	if (!includeCapitalLetters && !includeLetters && !includeNumbers && !includeSpecialChars) {
+		strengthScore = 0
+	}
+
+	// Ocenianie siły hasła na podstawie zgromadzonych punktów
+	if (strengthScore >= 10) {
+		return 'Very strong' // Bardzo mocne
+	} else if (strengthScore >= 7) {
+		return 'Strong' // Mocne
+	} else if (strengthScore >= 4) {
+		return 'Medium' // Średnie
+	} else if (strengthScore >= 2) {
+		return 'Weak' // Słabe
+	} else {
+		return 'Very weak' // Bardzo słabe
+	}
 }

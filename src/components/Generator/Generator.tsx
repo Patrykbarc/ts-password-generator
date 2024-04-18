@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { GeneratorOptions } from '../GeneratorOptions/GeneratorOptions'
-import { GeneratorFooter } from '../GeneratorFooter/GeneratorFooter'
+import { GeneratePassword } from '../GeneratePassword/GeneratePassword'
 import { DefaultProps, PasswordGeneratorSettings } from '../../utils/interfaces'
 import { HeroCard } from '../HeroCard/HeroCard'
 import { PasswordStrengthBadge } from '../PasswordStrengthBadge/PasswordStrengthBadge'
@@ -11,8 +11,8 @@ export function Generator({ className }: DefaultProps) {
 		passwordLength: 10,
 		includeLetters: true,
 		includeCapitalLetters: true,
-		includeNumbers: false,
-		includeSpecialChars: false,
+		includeNumbers: true,
+		includeSpecialChars: true,
 	})
 
 	return (
@@ -22,7 +22,7 @@ export function Generator({ className }: DefaultProps) {
 				<GeneratorPassLength settings={settings} setSettings={setSettings} />
 				<GeneratorOptions settings={settings} setSettings={setSettings} />
 			</div>
-			<GeneratorFooter settings={settings} />
+			<GeneratePassword settings={settings} />
 		</HeroCard>
 	)
 }

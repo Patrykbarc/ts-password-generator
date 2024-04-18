@@ -11,18 +11,18 @@ export function GeneratorPassLength({ settings, setSettings }: GeneratorSettings
 	}
 
 	return (
-		<div className='mb-6 flex flex-col gap-4 sm:mb-10 sm:flex-row'>
-			<div>
-				Password Length: <b>{passwordLength}</b>
-			</div>
+		<div className='mb-6 flex flex-col gap-4 sm:mb-10'>
 			<input
 				className='grow'
 				type='range'
 				min={6}
-				max={50}
+				max={32}
 				value={passwordLength}
 				onChange={handleSetPasswordLength}
 			/>
+			<div>
+				Password Length: <b>{passwordLength}</b>
+			</div>
 		</div>
 	)
 }
