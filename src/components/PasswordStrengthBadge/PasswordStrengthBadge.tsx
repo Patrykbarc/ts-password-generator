@@ -31,7 +31,7 @@ export function PasswordStrengthBadge({ settings }: { settings: PasswordGenerato
 	}
 
 	return (
-		<h4 className='mb-6 text-h4 font-semibold'>
+		<h4 className='mb-6  font-semibold'>
 			Password strength:{' '}
 			<label className={`${badgeColor} rounded-md px-2 py-1 text-indigo-50`}>
 				{passwordStrength}

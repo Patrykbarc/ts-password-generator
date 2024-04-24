@@ -10,7 +10,7 @@ export function Accordion() {
 
 	return (
 		<div>
-			<h2 className='text-h2 font-bold text-indigo-500 mb-8'>Frequently asked questions</h2>
+			<h2 className='font-bold text-indigo-500 mb-8'>Frequently asked questions</h2>
 
 			{accordionData.map((data, index) => {
 				const isOpen = openIndex === index
@@ -21,7 +21,7 @@ export function Accordion() {
 							<div
 								className={`flex cursor-pointer justify-between group hover:text-indigo-500 ${isOpen ? 'text-indigo-400' : ''}`}
 								onClick={() => handleSectionFold(index)}>
-								<h4 className='text-h4 font-semibold '>{data.title}</h4>
+								<h4 className=' font-semibold '>{data.title}</h4>
 								<PlusCircleIcon
 									className={`h-12 hidden lg:block text-neutral-700 transition-transform duration-500 ${isOpen ? 'rotate-45 fill-indigo-400' : ''} group-hover:fill-indigo-500`}
 								/>
@@ -39,7 +39,7 @@ export function Accordion() {
 												transition: 'max-height 500ms ease-out',
 											}
 								}>
-								<p className='pb-5 pt-3 text-regular'>{data.description}</p>
+								<p className='pb-5 pt-3'>{data.description}</p>
 							</div>
 						</div>
 					</Fragment>

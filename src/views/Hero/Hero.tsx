@@ -4,15 +4,16 @@ import { Wrapper } from '../../components/Wrapper/Wrapper'
 
 export function Hero() {
 	return (
-		<div className='relative flex h-fit lg:h-screen bg-center py-24'>
+		<div className='relative flex h-fit lg:h-[80dvh] bg-center py-24'>
 			<BackgroundImage className='bg-fixed' backgroundFixed={true} />
-			<Wrapper className='relative z-50 flex-col gap-10 sm:gap-20'>
+			<Wrapper className='relative grid grid-cols-2 max-w-[1500px] z-50 gap-10 sm:gap-20'>
 				<div>
-					<h1 className='mb-3 text-5xl font-black text-neutral-100 md:text-8xl md:mb-8'>
+					<h1 className='mb-3 text-6xl font-black text-neutral-100 md:mb-8'>
 						Free Password Generator
 					</h1>
-					<h4 className='text-h4 font-light text-neutral-300 md:text-5xl'>
-						Create safe and unique passwords 🔐
+					<h4 className='font-light text-neutral-300 text-3xl max-w-xl'>
+						Create strong, unique passwords with our easy-to-use password generator.
+						Never worry about forgetting or compromising your passwords again. 🔐
 					</h4>
 				</div>
 
