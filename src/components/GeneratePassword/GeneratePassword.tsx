@@ -45,7 +45,7 @@ export function GeneratePassword({ settings }: { settings: PasswordGeneratorSett
 				</p>
 			</div>
 
-			<SwitchButton />
+			<SwitchButton label='Show password' checked={false} callback={setIsPasswordBlured} />
 		</div>
 	)
 }
