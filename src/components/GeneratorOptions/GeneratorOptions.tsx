@@ -12,7 +12,7 @@ export function GeneratorOptions({ settings, setSettings }: GeneratorSettingsPro
 
 	return (
 		<div>
-			<div className='flex gap-2 sm:flex-row my-4 flex-wrap'>
+			<div className='flex gap-2 sm:flex-row my-4 flex-wrap border-2 p-2 rounded-lg'>
 				{options.map(option => {
 					return (
 						<div className='w-full' key={option.value}>

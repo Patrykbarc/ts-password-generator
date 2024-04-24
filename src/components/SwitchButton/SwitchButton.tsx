@@ -20,7 +20,7 @@ export function SwitchButton({
 
 	return (
 		<label
-			className={`flex w-full justify-between py-1 px-2 border gap-3 cursor-pointer ${directionStyle}`}>
+			className={`flex w-full justify-between py-1 px-2 gap-3 cursor-pointer ${directionStyle}`}>
 			{label && <span className='inline-block select-none'>{label}</span>}
 			<input
 				className='hidden'

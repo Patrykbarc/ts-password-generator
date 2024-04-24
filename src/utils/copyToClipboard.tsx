@@ -1,20 +1,17 @@
-import { Dispatch, SetStateAction } from 'react'
+import { toast } from 'react-hot-toast'
 
 interface CopyToClipboardArgs {
 	event: React.MouseEvent<HTMLElement>
-	setIsCopied: Dispatch<SetStateAction<boolean>>
 }
 
-export function copyToClipboard({ event, setIsCopied }: CopyToClipboardArgs) {
+export function copyToClipboard({ event }: CopyToClipboardArgs) {
 	const text = event.currentTarget.textContent
 	try {
 		text !== null && navigator.clipboard.writeText(text)
-		setIsCopied(true)
-
-		setTimeout(() => {
-			setIsCopied(false)
-		}, 2500)
+		toast.success('Copied to cliboard')
 	} catch (error) {
 		setTimeout(() => {}, 3500)
+		console.error(error)
+		toast.error('Something went wrong 😐')
 	}
 }

@@ -5,9 +5,10 @@ import { PasswordGeneratorSettings } from '../../utils/interfaces'
 import { copyToClipboard } from '../../utils/copyToClipboard'
 import { SwitchButton } from '../SwitchButton/SwitchButton'
 
+
 export function GeneratePassword({ settings }: { settings: PasswordGeneratorSettings }) {
 	const [generatedPassword, setGeneratedPassword] = useState('')
-	const [isCopied, setIsCopied] = useState(false)
+	// const [isCopied, setIsCopied] = useState(false)
 	const [isPasswordBlured, setIsPasswordBlured] = useState(true)
 
 	const { includeCapitalLetters, includeLetters, includeNumbers, includeSpecialChars } = settings
@@ -15,7 +16,7 @@ export function GeneratePassword({ settings }: { settings: PasswordGeneratorSett
 	const handleGeneratePassword = useCallback(() => {
 		const newPassword = generatePassword(settings)
 		setGeneratedPassword(newPassword)
-		setIsCopied(false)
+		// setIsCopied(false)
 	}, [settings])
 
 	useEffect(() => {
@@ -33,7 +34,7 @@ export function GeneratePassword({ settings }: { settings: PasswordGeneratorSett
 
 			<div
 				className='cursor-pointer rounded-lg border bg-emerald-300 p-2 px-3 text-center transition-colors'
-				onClick={event => copyToClipboard({ event, setIsCopied })}>
+				onClick={event => copyToClipboard({ event })}>
 				<div className='overflow-hidden'>
 					<p>
 						<span
