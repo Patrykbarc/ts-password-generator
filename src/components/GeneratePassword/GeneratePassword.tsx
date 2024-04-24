@@ -3,11 +3,12 @@ import { generatePassword } from '../../utils/generatePassword'
 import { Button } from '../Button/Button'
 import { PasswordGeneratorSettings } from '../../utils/interfaces'
 import { copyToClipboard } from '../../utils/copyToClipboard'
+import { SwitchButton } from '../SwitchButton/SwitchButton'
 
 export function GeneratePassword({ settings }: { settings: PasswordGeneratorSettings }) {
 	const [generatedPassword, setGeneratedPassword] = useState('')
 	const [isCopied, setIsCopied] = useState(false)
-	const [warningMessage, setWarningMessage] = useState('')
+	const [isPasswordBlured, setIsPasswordBlured] = useState(true)
 
 	const { includeCapitalLetters, includeLetters, includeNumbers, includeSpecialChars } = settings
 
@@ -27,7 +28,7 @@ export function GeneratePassword({ settings }: { settings: PasswordGeneratorSett
 	return (
 		<div>
 			<Button
-				className='mb-8 w-full'
+				className='w-full mb-4'
 				callback={handleGeneratePassword}
 				isDisabled={isDisabled}>
 				Generate password
@@ -35,23 +36,16 @@ export function GeneratePassword({ settings }: { settings: PasswordGeneratorSett
 
 			<div
 				className='cursor-pointer rounded-lg border bg-emerald-300 p-4 text-center transition-colors'
-				onClick={event => copyToClipboard({ event, setIsCopied, setWarningMessage })}>
+				onClick={event => copyToClipboard({ event, setIsCopied })}>
 				<p>
-					{isCopied ? (
-						<span>Copied to clipboard</span>
-					) : (
-						<span className='break-all font-semibold'>{generatedPassword}</span>
-					)}
+					<span
+						className={`break-all font-semibold ${isPasswordBlured ? 'blur-sm' : ''}`}>
+						{generatedPassword}
+					</span>
 				</p>
 			</div>
 
-			{warningMessage && (
-				<div className='mt-2'>
-					<small className='text-warning fade-in mt-4 text-opacity-75'>
-						{warningMessage}
-					</small>
-				</div>
-			)}
+			<SwitchButton />
 		</div>
 	)
 }

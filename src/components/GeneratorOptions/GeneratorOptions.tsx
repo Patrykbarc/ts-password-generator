@@ -11,7 +11,7 @@ export function GeneratorOptions({ settings, setSettings }: GeneratorSettingsPro
 
 	return (
 		<div>
-			<div className='flex flex-col gap-4 sm:flex-row'>
+			<div className='flex flex-col gap-4 sm:flex-row my-4'>
 				{options.map(option => {
 					return (
 						<label key={option.value}>

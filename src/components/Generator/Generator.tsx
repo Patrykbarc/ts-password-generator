@@ -22,7 +22,9 @@ export function Generator({ className }: DefaultProps) {
 				<GeneratorPassLength settings={settings} setSettings={setSettings} />
 				<GeneratorOptions settings={settings} setSettings={setSettings} />
 			</div>
-			<GeneratePassword settings={settings} />
+			<div>
+				<GeneratePassword settings={settings} />
+			</div>
 		</HeroCard>
 	)
 }

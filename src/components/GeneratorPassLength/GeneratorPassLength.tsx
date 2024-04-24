@@ -11,7 +11,7 @@ export function GeneratorPassLength({ settings, setSettings }: GeneratorSettings
 	}
 
 	return (
-		<div className='mb-6 flex flex-col gap-4 sm:mb-10'>
+		<div className='flex flex-col gap-4'>
 			<input
 				className='grow'
 				type='range'
