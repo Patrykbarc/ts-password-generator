@@ -26,23 +26,22 @@ export function GeneratePassword({ settings }: { settings: PasswordGeneratorSett
 		!includeCapitalLetters && !includeLetters && !includeNumbers && !includeSpecialChars && true
 
 	return (
-		<div>
-			<Button
-				className='w-full mb-4'
-				callback={handleGeneratePassword}
-				isDisabled={isDisabled}>
+		<div className='flex flex-col gap-4'>
+			<Button className='w-full' callback={handleGeneratePassword} isDisabled={isDisabled}>
 				Generate password
 			</Button>
 
 			<div
-				className='cursor-pointer rounded-lg border bg-emerald-300 p-4 text-center transition-colors'
+				className='cursor-pointer rounded-lg border bg-emerald-300 p-2 px-3 text-center transition-colors'
 				onClick={event => copyToClipboard({ event, setIsCopied })}>
-				<p>
-					<span
-						className={`break-all font-semibold ${isPasswordBlured ? 'blur-sm' : ''}`}>
-						{generatedPassword}
-					</span>
-				</p>
+				<div className='overflow-hidden'>
+					<p>
+						<span
+							className={`break-all font-semibold truncate ${isPasswordBlured ? 'blur-sm' : ''}`}>
+							{generatedPassword}
+						</span>
+					</p>
+				</div>
 			</div>
 
 			<SwitchButton label='Show password' checked={false} callback={setIsPasswordBlured} />

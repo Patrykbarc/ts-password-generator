@@ -14,9 +14,13 @@ export function SwitchButton({
 	callback,
 }: SwitchButtonProps) {
 	const [isSelected, setIsSelected] = useState<boolean>(checked)
+
+	const directionStyle = direction === 'vertical' ? 'flex-col' : 'flex-row items-center'
+	const isButtonSelectedStyle = !isSelected ? 'left-0.5 bg-neutral-500' : 'left-5 bg-indigo-500'
+
 	return (
 		<label
-			className={`flex py-1 px-2 w-fit gap-3 cursor-pointer ${direction === 'vertical' ? 'flex-col' : 'flex-row'}`}>
+			className={`flex w-full justify-between py-1 px-2 border gap-3 cursor-pointer ${directionStyle}`}>
 			{label && <span className='inline-block select-none'>{label}</span>}
 			<input
 				className='hidden'
@@ -28,11 +32,11 @@ export function SwitchButton({
 			/>
 
 			<span className='flex items-center gap-2 select-none'>
-				<span className='relative inline-block border border-neutral-400 w-10 h-5 rounded-xl'>
+				<span className='relative inline-block border border-neutral-400 w-10 h-5 rounded-xl bg-indigo-50'>
 					<span
 						style={{ transition: 'left 0.2s' }}
 						className={`relative inline-block border rounded-xl size-4
-                        ${!isSelected ? 'left-0.5 bg-neutral-500' : 'left-5 bg-indigo-500'}`}
+                        ${isButtonSelectedStyle}`}
 					/>
 				</span>
 			</span>

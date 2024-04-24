@@ -1,5 +1,6 @@
 import { options } from '../../constants/options'
 import { GeneratorSettingsProps, PasswordGeneratorSettings } from '../../utils/interfaces'
+import { SwitchButton } from '../SwitchButton/SwitchButton'
 
 export function GeneratorOptions({ settings, setSettings }: GeneratorSettingsProps) {
 	function handleSetOptions(optionName: keyof PasswordGeneratorSettings) {
@@ -11,25 +12,22 @@ export function GeneratorOptions({ settings, setSettings }: GeneratorSettingsPro
 
 	return (
 		<div>
-			<div className='flex flex-col gap-4 sm:flex-row my-4'>
+			<div className='flex gap-2 sm:flex-row my-4 flex-wrap'>
 				{options.map(option => {
 					return (
-						<label key={option.value}>
-							<input
-								type='checkbox'
-								value={option.value}
-								className='mr-2'
+						<div className='w-full' key={option.value}>
+							<SwitchButton
+								label={option.name}
 								checked={
 									!!settings[option.value as keyof PasswordGeneratorSettings]
 								}
-								onChange={() =>
+								callback={() =>
 									handleSetOptions(
 										option.value as keyof PasswordGeneratorSettings
 									)
 								}
 							/>
-							{option.name}
-						</label>
+						</div>
 					)
 				})}
 			</div>
