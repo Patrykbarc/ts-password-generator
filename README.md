@@ -1,30 +1,18 @@
-# React + TypeScript + Vite
+# SecureKeyGen
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Deploy
 
-Currently, two official plugins are available:
+https://securekeygen.netlify.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Overview
 
-## Expanding the ESLint configuration
+The Password Generator App is a simple React-based application that allows users to generate secure passwords based on their preferences. The application provides a user-friendly interface to customize password length and include or exclude different character types such as letters, capital letters, numbers, and special characters.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-- Configure the top-level `parserOptions` property like this:
+## Password Generation Logic
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+The password generation logic is encapsulated in a separate utility file `(utils/generatePassword.ts)`. The generatePassword function takes user settings and returns a randomly generated password.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Conclusion
+
+The Password Generator App focuses on providing a secure and customizable solution for generating passwords. Users can adjust settings according to their preferences, and the application ensures the generated passwords are strong and meet the specified criteria. The modular structure of components promotes maintainability and extensibility.
