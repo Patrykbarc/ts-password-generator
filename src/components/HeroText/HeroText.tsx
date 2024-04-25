@@ -1,6 +1,6 @@
 export function HeroText() {
 	return (
-		<>
+		<div>
 			<h1 className='mb-3 text-6xl font-black text-neutral-100 md:mb-8'>
 				Free Password Generator
 			</h1>
@@ -8,6 +8,6 @@ export function HeroText() {
 				<h4>Create strong, unique passwords with our easy-to-use password generator.</h4>
 				<h4>Never worry about forgetting or compromising your passwords again. 🔐</h4>
 			</div>
-		</>
+		</div>
 	)
 }

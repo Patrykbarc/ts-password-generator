@@ -1,19 +1,19 @@
 import { Accordion } from '../../components/Accordion/Accordion'
-import { CardsSection } from '../../components/CardsSection/CardsSection'
-import { Curiosities } from '../../components/Curiosities/Curiosities'
+import { SecurityFactsSection } from '../../components/SecurityFactsSection/SecurityFactsSection'
+import { SecurityTipsSection } from '../../components/SecurityTipsSection/SecurityTipsSection'
 import { Wrapper } from '../../components/Wrapper/Wrapper'
 import { DefaultProps } from '../../utils/interfaces'
 
 export function Main({ className }: DefaultProps) {
 	return (
-		<Wrapper className={className}>
-			<section className='flex flex-col gap-14'>
-				<CardsSection />
-				<hr />
-				<Curiosities />
-				<hr />
-				<Accordion />
-			</section>
-		</Wrapper>
+		<main className='text-pretty text-neutral-700'>
+			<Wrapper className={className}>
+				<div className='flex flex-col gap-16'>
+					<SecurityTipsSection />
+					<SecurityFactsSection />
+					<Accordion />
+				</div>
+			</Wrapper>
+		</main>
 	)
 }

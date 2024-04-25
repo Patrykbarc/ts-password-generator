@@ -36,8 +36,8 @@ export function GeneratePassword({ settings }: { settings: PasswordGeneratorSett
 				onClick={event => copyToClipboard({ event })}>
 				<div className='overflow-hidden items-center flex justify-between'>
 					<div
-						className={`break-all flex font-semibold truncate ${isPasswordBlured ? 'blur-sm' : ''}`}>
-						{generatedPassword}
+						className={`break-all flex w-full font-semibold truncate ${isPasswordBlured ? 'blur-sm' : ''}`}>
+						<p className='w-full text-center'>{generatedPassword}</p>
 					</div>
 					<div className='pl-3'>
 						<ClipboardIcon className='size-5' />

@@ -16,15 +16,17 @@ export function Generator({ className }: DefaultProps) {
 	})
 
 	return (
-		<HeroCard className={className}>
-			<div>
-				<PasswordStrengthBadge settings={settings} />
-				<GeneratorPassLength settings={settings} setSettings={setSettings} />
-				<GeneratorOptions settings={settings} setSettings={setSettings} />
-			</div>
-			<div>
-				<GeneratePassword settings={settings} />
-			</div>
-		</HeroCard>
+		<div>
+			<HeroCard className={className}>
+				<div>
+					<PasswordStrengthBadge settings={settings} />
+					<GeneratorPassLength settings={settings} setSettings={setSettings} />
+					<GeneratorOptions settings={settings} setSettings={setSettings} />
+				</div>
+				<div>
+					<GeneratePassword settings={settings} />
+				</div>
+			</HeroCard>
+		</div>
 	)
 }
